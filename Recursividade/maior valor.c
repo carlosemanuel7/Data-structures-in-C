@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 void preencheVetor(int vet[], int x){
 	
@@ -27,15 +28,18 @@ int valorMaior(int vet[] , int x){
 	if (x == 1)
 		return vet[0];
 		
-	return vet[0] = valorMaior(vet +  1, x - 1);
-		
+	if (vet[x-1] > valorMaior(vet, x -1)) {
+		return vet[x-1];
+	}
+	
+	return valorMaior(vet, x-1);
 }
 
 int main(){
-	
+	srand(time(NULL));
 	int vet[10];
 	preencheVetor(vet , 10);
 	printVet(vet,10);
-	printf(" == %d" , valorMaior(vet,10));
+	printf(" Maior valor : %d" , valorMaior(vet,10));
 
 }
