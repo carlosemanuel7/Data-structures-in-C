@@ -9,22 +9,22 @@ int interface(){
 	
 	int opt;
 	printf("1 - Cadastrar aluno no final\n");
-	printf("2 - Cadastrar aluno no inicio\n");
+	printf("2 - CadastCallingrar aluno no inicio\n");
 	printf("3 - Printar aluno\n");
+	printf("3 - Excluir aluno\n");
 	scanf("%d" , &opt);
 	return opt;
 }
 
 void insert_last(List list){
-	
+
 	int age;
 	char nome[100];
 	printf("Nome: ");
 	scanf("%s", nome);
 	printf("Idade: ");
 	scanf("%d", &age);
-	Student aluno = new_student(nome, age);
-
+	Student aluno = new_student(nome, age , list->nextId++);
 	insert_queue(list, aluno);
 	
 }
@@ -36,7 +36,7 @@ void insert_first(List list){
 	scanf("%s", nome);
 	printf("Idade: ");
 	scanf("%d", &age);
-	Student aluno = new_student(nome, age);
+	Student aluno = new_student(nome, age ,  list->nextId++);
 	insert_stack(list, aluno);
 	
 }
@@ -56,9 +56,11 @@ int main()
 			case 3: print_aluno(list);
 				break;
 			
+			case 4: excluir_aluno(list);
+				break;
+			
 		
 		}
 	} while (1);
 
 }
-
