@@ -77,4 +77,3 @@ The code in this repository was developed for educational purposes and may conta
 ## Author
 
 Carlos Emanuel R. Queiroz
-Information Systems Student
