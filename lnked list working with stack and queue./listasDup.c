@@ -9,7 +9,7 @@ int interface(){
 	
 	int opt;
 	printf("1 - Cadastrar aluno no final\n");
-	printf("2 - CadastCallingrar aluno no inicio\n");
+	printf("2 - Cadastrar aluno no inicio\n");
 	printf("3 - Printar aluno\n");
 	printf("3 - Excluir aluno\n");
 	scanf("%d" , &opt);

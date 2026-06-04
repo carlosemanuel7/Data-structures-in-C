@@ -41,7 +41,7 @@ List new_list(){
 	new->tail = NULL;
 	new->current = NULL;
 	new->size = 0;
-	new->nextId = 0;
+	new->nextId = 1;
 	return new;
 }
 
@@ -71,7 +71,6 @@ void insert_queue(List list , Student student){
 		list->current = new;
 		
 		list->size++;
-		new->data->id++;
 		return;
 	}
 	
@@ -81,9 +80,7 @@ void insert_queue(List list , Student student){
 	list->tail = new;
 	list->current = new;
 	list->size++;
-	new->data->id++;
 
-	
 }
 
 void insert_stack(List list , Student student){
@@ -99,7 +96,6 @@ void insert_stack(List list , Student student){
 		list->head = new;
 		list->tail = new;
 		list->current = new;
-		
 		list->size++;
 		return;
 	}
@@ -157,10 +153,6 @@ void excluir_aluno(List list){
 	{
 		return;
 	}
-	if (temp == NULL)
-	{
-		printf("Alvo n encontrado");
-	}
 	if (temp == list->head && temp == list->tail)
 	{
 		list->head = NULL;
@@ -168,6 +160,7 @@ void excluir_aluno(List list){
 		list->current = NULL;
 		free(temp);
 		list->size--;
+		return;
 	}
 	if (temp == list->head)
 	{
@@ -175,6 +168,8 @@ void excluir_aluno(List list){
 		list->head->prev = NULL;
 		free(temp);
 		list->size--;
+		return;
+
 	}
 	if (temp == list->tail)
 	{
@@ -182,14 +177,17 @@ void excluir_aluno(List list){
 		list->tail->next = NULL;
 		free(temp);
 		list->size--;
+		return;
+
 	}
 	if (temp != list->head && temp != list->tail)
 	{
 		temp->next->prev = temp->prev;
 		temp->prev->next = temp->next;
-	
 		free(temp);
 		list->size--;
+		return;
+
 	}
 }
 
