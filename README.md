@@ -58,7 +58,7 @@ The goal of this repository is to document my learning journey through fundament
 ## Technologies
 
 - Language: C
-- Compiler: GCC
+- Compiler: GEANY
 - Operating System: Linux
 
 ## Repository Purpose
